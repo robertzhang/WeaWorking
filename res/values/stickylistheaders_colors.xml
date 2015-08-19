@@ -1,0 +1,7 @@
+<resources>
+
+    <color name="header_normal">#FFC4C4C4</color>
+    <color name="header_pressed">#FFC2C2C2</color>
+    <color name="menu_section_header">#FFDDDDDD</color>
+
+</resources>

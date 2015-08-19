@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp" >
+    
+    <RelativeLayout
+        android:id="@+id/task_note_item_top_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/task_note_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_alignParentLeft="true"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <TextView 
+            android:id="@+id/task_note_item_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/task_note_item_name"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="14sp"/>
+        <TextView 
+            android:id="@+id/task_note_item_channel_name"  
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/task_note_item_action"
+            android:textColor="@color/blue"
+            android:textSize="12sp"      
+            />
+        <TextView 
+            android:id="@+id/task_note_item_task_name"  
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/task_note_item_channel_name"
+            android:layout_marginLeft="2dp"
+            android:textSize="12sp"      
+            />
+        
+         <ImageButton 
+            android:id="@+id/task_note_item_delete"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_toRightOf="@id/task_note_item_action"
+            android:src="@android:drawable/ic_menu_delete"
+            android:layout_marginLeft="5dp"
+            android:visibility="gone"/>
+        <TextView 
+            android:id="@+id/task_note_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"/>
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/task_note_item_progress_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task_note_item_top_rl"
+        android:background="@android:color/darker_gray"
+        android:layout_margin="10dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

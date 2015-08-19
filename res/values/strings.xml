@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">WeaWorking</string>
+    <string name="main_title">WeaWorking</string>
+    
+    <string name="task_content_channel_name">[ %s ]</string>
+	<string name="task_content_assigned_user_name">%s 负责</string>
+	
+	<string name="add_task_progress_string">添加任务进展</string>
+	<string name="sign_task_string">标记任务为%s</string>
+	<string name="create_new_task_string">创建了一个任务</string>
+	
+</resources>

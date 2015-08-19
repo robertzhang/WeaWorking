@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/task_content_title_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title_bar_bg" >
+
+        <ImageButton
+            android:id="@+id/task_content_title_bar_left_ib"
+            style="@style/dialog_blue_button"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@android:drawable/ic_input_delete" />
+
+        <TextView
+            android:id="@+id/task_content_title_bar_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="任 务"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/task_content_title_bar_right_iv"
+            style="@style/dialog_blue_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/task_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task_content_title_bar_rl" 
+        android:background="@drawable/common_setting_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/task_content_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/task_content_top_channel_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/task_content_top_task_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/task_content_top_channel_name_tv"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="5dp"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/task_content_top_assigned_user_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/task_content_top_task_name_tv"
+                android:layout_margin="5dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/task_content_top_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/task_content_top_task_name_tv"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_tab"
+                android:clickable="true"
+                android:textColor="@android:color/holo_purple"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/task_content_top_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_tab"
+                android:clickable="true"
+                android:text="删除任务"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/task_content_middle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/task_content_top"
+            android:layout_margin="5dp"
+            android:gravity="center" >
+
+            <ImageButton
+                android:id="@+id/task_content_middle_ib"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:src="@android:drawable/ic_menu_send" />
+
+            <EditText
+                android:id="@+id/task_content_middle_et"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/task_content_middle_ib"
+                android:textSize="16sp"
+                android:hint="请添加进展.."
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/task_notes_lv"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/task_ll"
+        android:divider="@null"
+        android:fastScrollEnabled="true"
+        android:scrollbars="none" />
+
+    <!--
+         <ProgressBar 
+        android:id="@+id/task_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progress"
+        android:layout_below="@id/task_content_middle"
+        android:layout_centerInParent="true"/>
+    -->
+
+</RelativeLayout>

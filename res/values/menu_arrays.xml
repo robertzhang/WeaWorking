@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="menu_header_array">
+        <item>频道</item>
+        <item>团队</item>
+        <item>周报</item>
+        <!-- <item>私人频道</item> -->
+    </string-array>
+
+</resources>

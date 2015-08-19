@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<RelativeLayout
+        android:id="@+id/setting_title_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/darker_gray" 
+        android:layout_alignParentTop="true">
+
+        <ImageButton
+            android:id="@+id/setting_title_bar_left_ib"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@android:drawable/ic_input_delete" />
+
+        <TextView
+            android:id="@+id/setting_title_bar_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="设 置"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/setting_title_bar_right_iv"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:visibility="gone" />
+    </RelativeLayout>
+    
+	
+    
+</RelativeLayout>
