@@ -179,8 +179,10 @@ public class Data{//所有数据都是源于IData模型
 	}
 	public static void updateActivitesCacheData(List<Activity> list, int status){
 		if (null != list && !list.isEmpty()){
-			if (status == LoadManager.LOAD_INIT){
+			if (status == LoadManager.LOAD_INIT || status == LoadManager.LOAD_NEW){
 				activites.clear();
+				activites.addAll(list);
+			} else if (status == LoadManager.LOAD_MORE){
 				activites.addAll(list);
 			} else {
 				takeOutRepeatAcitivityItem(list, status);

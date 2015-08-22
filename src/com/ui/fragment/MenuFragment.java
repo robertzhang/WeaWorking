@@ -9,6 +9,7 @@ import com.data.greendao.User;
 import com.data.greendao.utils.GreenDaoFactory;
 import com.example.weaworking.R;
 
+import com.processor.LoadManager;
 import com.processor.ProcessorImpl;
 import com.processor.itf.IView;
 import com.processor.itf.IProcessor.RefreshUIListener;
@@ -170,7 +171,12 @@ public class MenuFragment extends Fragment implements IView{
 		menuAdapter.notifyDataSetChanged();
 		setCurrentUserInfo();
 		
-		((MainFragment)mContent).notifyChangeData();
+		reFreshDashBoardChange(LoadManager.LOAD_INIT);//更新动态数据列表
+	}
+	
+	@Override
+	public void reFreshDashBoardChange(int loadtype) {
+		((MainFragment)mContent).notifyChangeData(loadtype);
 	}
 
 	public void reFreshContentUI(){

@@ -222,6 +222,10 @@ public class TaskActivity extends Activity implements IView, OnClickListener{
 	}
 
 	@Override
+	public void reFreshDashBoardChange(int loadtype) {
+	}
+
+	@Override
 	public void setRefreshUIListener(RefreshUIListener listener) {
 	}
 }

@@ -20,7 +20,7 @@
             android:textSize="16sp" />
     </RelativeLayout>
 
-    <ListView 
+    <com.ui.view.PullUpAndDownRefreshListView 
         android:id="@+id/feeds_lv"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

@@ -39,6 +39,8 @@ public class LoadManager implements ILoadData{
 	public static final int LOAD_INIT		= 1;
 	public static final int LOAD_NEW 		= 2; 
 	public static final int LOAD_MORE 		= 3;
+	
+	public static int dashboard_page = 1;
 
 	public LoadDataFinishedListenser mLoadDataFinishedListenser;
 	public Context mContext;
@@ -48,7 +50,9 @@ public class LoadManager implements ILoadData{
 		mContext = context;
 		mRequestQueue = Volley.newRequestQueue(mContext);
 	}
-	
+	public static int getDashBoardNextPage(){
+		return ++dashboard_page;
+	}
 //Begin ------------------------ 实现ILoadData  ---------------------	
 	public void loadData(int loadtype, int datatype, String url) {
 		if (NetworkUtils.hasNetwork(mContext)){ //加载网络数据
@@ -195,7 +199,7 @@ public class LoadManager implements ILoadData{
 		protected void onPostExecute(Integer datatype) {
 			super.onPostExecute(datatype);
 			LogUitls.LogE("onPostExecute");
-			mLoadDataFinishedListenser.LoadDataFinished(datatype);
+			mLoadDataFinishedListenser.LoadDataFinished(0,datatype);
 		}
 	}
 	
@@ -217,7 +221,7 @@ public class LoadManager implements ILoadData{
 		@Override
 		protected void onPostExecute(Integer result) {
 			super.onPostExecute(result);
-			mLoadDataFinishedListenser.LoadDataFinished(result);
+			mLoadDataFinishedListenser.LoadDataFinished(loadtype, result);
 		}
 	}
 	

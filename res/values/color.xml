@@ -4,4 +4,5 @@
     <color name="red">#AFFF0000</color>
     <color name="yellow">#FFB90F</color>
     <color name="blue">#87CEFA</color>
+    <color name="transparent">#00000000</color>
 </resources>

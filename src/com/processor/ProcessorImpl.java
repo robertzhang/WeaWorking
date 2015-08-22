@@ -84,7 +84,7 @@ public class ProcessorImpl implements IProcessor , IProcessor.RefreshUIListener,
 
 	//------- LoadDataFinishedListenser 加载完成后通知Presenter做相应的动作 ----------
 	@Override
-	public void LoadDataFinished(int dataStatus) {
+	public void LoadDataFinished(int loadtype, int dataStatus) {
 		switch (dataStatus){
 		case GreenDaoFactory.NONE:
 			LogUitls.LogE("LoadDataFinish--- >init");
@@ -92,7 +92,11 @@ public class ProcessorImpl implements IProcessor , IProcessor.RefreshUIListener,
 			break;
 		case GreenDaoFactory.ACTIVITY:
 			LogUitls.LogE("LoadDataFinish--- >ACTIVITY");
-			mView.reFreshContentUI();
+			if (loadtype == LoadManager.LOAD_MORE || loadtype == LoadManager.LOAD_NEW) {
+				mView.reFreshDashBoardChange(loadtype);
+			} else {
+				mView.reFreshContentUI();
+			}
 			break;
 		/*case GreenDaoFactory.CHANNEL:
 			mView.updateChannelsView();
