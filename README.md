@@ -2,16 +2,23 @@
 项目将会不定期更新，内容不和谐请谅解并忽略……
 ## 1.项目构建原因
 WeaWroking项目起初立项的原因有两个：   
+
 * 团队任务管理系统web版，希望能有移动端的产品
 * 用于锻炼Android应用程序框架编写的能力，这里主要用到的是MVP   
+
+
 ### 1.1需求分析
 使用人：团队成员  
 使用目的：丰富WeaWroking任务管理系统的使用类型   
 针对已有的WeaWroking web程序进行功能移植，使其能够在移动设备上使用。介于目前web版的WeaWroking已经可以正常使用，所以移动端的设计主要是按照已有的功能来设计。    
 需求分为：
+
 * 后端提供API接口，这部分需要先整理需要的数据，然后协调设计接口
 * 移动界面设计为左右滑动抽屉。左抽屉用来展示频道和团队人员，右抽屉用来展示任务。任务分为todo，doing，done三个部分，所以此模块使用viewpager。详细的设计见代码  
+
+
 ### 1.2需求设计
+to be continue……
 
 ## 2.项目结构
 ### 2.1 MVP
@@ -60,7 +67,8 @@ OAuth 2.0英文文档，相当详细
 
 #### *目前设想使用的认证方式
 
-通过测试发现调用资源服务器的认证接口是无法获取token的。通过资源服务器（WeaWorking）登陆认证流程来说明。   
+通过测试发现调用资源服务器的认证接口是无法获取token的。通过资源服务器（WeaWorking）登陆认证流程来说明。 
+  
 * 1、C（Client-浏览器）访问R（Resource Server-资源服务器）的认证接口 /users/auth/net263。该地址为omniauth认证。
 * 2、R将C重定向到A（Authorization Server-认证服务器）的认证接口 /oauth/authorize获取code，A将C重定向到R事先定义好的CallBack
 * 3、R到A的/oauth/token获取token。
@@ -70,12 +78,37 @@ OAuth 2.0英文文档，相当详细
 根据上面的登陆流程可以看出，资源服务器直接从认证服务器获取token，Client并没用经手token。另外，现在的资源服务器直接使用token去获取数据也是不被允许的。
    
 综上问题，现使用以下方案：
+
 * 客户端直接通过认证服务器的/oauth/authorize和/oauth/token获取token
 * 使用token在认证服务器获取user信息
 * 客户端向资源服务器API发送数据请求。需带参数：app_key，secret，user.email，其他查询的必要参数。
 
 app_key和secret是为了确保非法客户端访问资源服务器；user.email告知资源服务器查询用户。
 
+## 技术简介
+
+### 开发环境
+
+* 开发环境 
+	* Eclipse & ADT
+	* Java(TM) SE Runtime Environment (build 1.7.0_60-b19)
+	* Android 4.2   
+	
+* 辅助工具 
+	* GenyMotion V2.5.2
+	* MWeb Lite V1.6.4
+
+
+### 开源项目
+* GreenDao
+* Volley
+* SlidingMenu
+* Stickylistheaders
+* Sweetalertdialog
+* Textdrawable
+
+### 说明
+该项目只做学习交流使用，请不要做商业用途。 
 
 
 
